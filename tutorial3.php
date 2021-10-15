@@ -7,12 +7,18 @@
     <title>Tutorial3</title>
 </head>
 <body>
+<form action="" method = "post">
+    <input type ="date" name="date" >
+    <input type ="submit" name="submit" value="ClickHere">
+  </form> 
 
 <?php
-    $birthDate="29-10-1999";
+   if(isset($_POST['submit'])){
+    $birthDate=$_POST['date'];
     $currentDate=date("d-m-Y");
     $age=date_diff(date_create($currentDate),date_create($birthDate));
     echo "Your current age is " .$age->format("%y"). " years and " .$age->format("%m"). " months and " .$age->format("%d"). ' days.';
+   }
 ?>
 
 </body>
